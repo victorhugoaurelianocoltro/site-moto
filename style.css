@@ -1,0 +1,339 @@
+/* style.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root {
+  --red-neon: #ff073a;
+  --dark-bg: #0a0a0a;
+  --dark-bg-light: #121212;
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-blur: 15px;
+  --text-light: #eee;
+  --text-dark: #222;
+  --shadow: 0 0 20px var(--red-neon);
+  --btn-radius: 40px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--dark-bg);
+  color: var(--text-light);
+  overflow-x: hidden;
+}
+
+/* Links */
+a {
+  color: var(--red-neon);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: #fff;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  z-index: 1000;
+  box-shadow: var(--shadow);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar .logo {
+  font-weight: 700;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  color: var(--red-neon);
+}
+
+.navbar nav a {
+  margin-left: 25px;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+#bgVideo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  filter: brightness(0.35);
+  object-fit: cover;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  max-width: 600px;
+  color: var(--text-light);
+  text-shadow: 0 0 15px var(--red-neon);
+}
+
+.hero-content h1 {
+  font-size: 3.8rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+  letter-spacing: 3px;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+/* Button Style */
+.btn {
+  display: inline-block;
+  background-color: var(--red-neon);
+  color: var(--text-light);
+  padding: 15px 30px;
+  font-weight: 700;
+  border-radius: var(--btn-radius);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  box-shadow: 0 0 15px var(--red-neon);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.btn:hover {
+  background-color: #ff3566;
+  box-shadow: 0 0 25px #ff3566;
+}
+
+/* Section Styles */
+section {
+  padding: 80px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+section h2 {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: var(--red-neon);
+  margin-bottom: 40px;
+  text-align: center;
+  text-shadow: 0 0 10px var(--red-neon);
+}
+
+/* Catalog (Swiper) */
+.catalogo .swiper {
+  width: 100%;
+  padding-bottom: 40px;
+}
+
+.swiper-slide {
+  background: var(--dark-bg-light);
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(255, 7, 58, 0.3);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  padding: 20px;
+}
+
+.swiper-slide:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px var(--red-neon);
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  filter: drop-shadow(0 0 5px var(--red-neon));
+}
+
+.swiper-slide h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: var(--red-neon);
+  font-weight: 700;
+}
+
+.swiper-slide p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #ccc;
+}
+
+/* Simulador de financiamento */
+.simulador form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  max-width: 600px;
+  margin: 0 auto 20px;
+}
+
+.simulador input {
+  padding: 12px 15px;
+  border-radius: var(--btn-radius);
+  border: none;
+  font-size: 1rem;
+  flex: 1 1 180px;
+}
+
+#resultado {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--red-neon);
+  min-height: 2rem;
+}
+
+/* Personalização */
+.personalizar form {
+  max-width: 600px;
+  margin: 0 auto 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.personalizar label {
+  font-weight: 600;
+  color: var(--red-neon);
+}
+
+.personalizar select {
+  padding: 12px 15px;
+  border-radius: var(--btn-radius);
+  border: none;
+  font-size: 1rem;
+  background: var(--dark-bg-light);
+  color: var(--text-light);
+}
+
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  color: var(--text-light);
+}
+
+.checkbox-group label {
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"] {
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+#customizacaoResultado {
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--dark-bg-light);
+  border-radius: 15px;
+  padding: 20px;
+  color: var(--red-neon);
+  font-weight: 700;
+  text-align: center;
+  box-shadow: 0 0 20px var(--red-neon);
+}
+
+/* Contato */
+.contato form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contato input,
+.contato textarea {
+  padding: 12px 15px;
+  border-radius: var(--btn-radius);
+  border: none;
+  font-size: 1rem;
+  background: var(--dark-bg-light);
+  color: var(--text-light);
+}
+
+.contato textarea {
+  resize: vertical;
+}
+
+.contato button {
+  max-width: 200px;
+  align-self: center;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 30px 20px;
+  background: var(--dark-bg-light);
+  color: #777;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 80px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+
+  .navbar nav a {
+    margin-left: 15px;
+    font-size: 0.9rem;
+  }
+}
